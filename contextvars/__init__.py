@@ -44,7 +44,7 @@ class ContextMeta(type(collections.abc.Mapping)):
 
     def __new__(mcls, names, bases, dct):
         cls = super().__new__(mcls, names, bases, dct)
-        if cls.__module__ != 'pep567' or cls.__name__ != 'Context':
+        if cls.__module__ != 'contextvars' or cls.__name__ != 'Context':
             raise TypeError("type 'Context' is not an acceptable base type")
         return cls
 
@@ -96,7 +96,7 @@ class ContextVarMeta(type):
 
     def __new__(mcls, names, bases, dct):
         cls = super().__new__(mcls, names, bases, dct)
-        if cls.__module__ != 'pep567' or cls.__name__ != 'ContextVar':
+        if cls.__module__ != 'contextvars' or cls.__name__ != 'ContextVar':
             raise TypeError("type 'ContextVar' is not an acceptable base type")
         return cls
 
@@ -176,7 +176,7 @@ class TokenMeta(type):
 
     def __new__(mcls, names, bases, dct):
         cls = super().__new__(mcls, names, bases, dct)
-        if cls.__module__ != 'pep567' or cls.__name__ != 'Token':
+        if cls.__module__ != 'contextvars' or cls.__name__ != 'Token':
             raise TypeError("type 'Token' is not an acceptable base type")
         return cls
 

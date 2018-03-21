@@ -7,14 +7,14 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as f:
 
 
 setuptools.setup(
-    name='pep567',
-    version="0.1.0",
+    name='contextvars',
+    version="2.0",
     description='PEP 567 Backport',
     long_description=readme,
     author='MagicStack Inc',
     author_email='hello@magic.io',
-    packages=['pep567'],
-    provides=['pep567'],
+    packages=['contextvars'],
+    provides=['contextvars'],
     license='Apache License, Version 2.0',
     classifiers=[
         'Development Status :: 3 - Alpha',

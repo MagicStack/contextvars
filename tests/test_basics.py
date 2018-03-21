@@ -9,7 +9,7 @@ import random
 import time
 import unittest
 
-import pep567 as contextvars
+import contextvars
 
 
 def isolated_context(func):

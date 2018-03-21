@@ -12,6 +12,13 @@ module (see PEP 567) for Python 3.6.
 asyncio event loop with PEP 567 support yet.  Stay tuned for updates.
 
 
+Original "contextvars" Package
+==============================
+
+This package replaces the old "contextvars" PyPI package which
+repository is available `here <https://github.com/gawen/contextvars>`_.
+
+
 Documentation
 =============
 
@@ -20,7 +27,7 @@ https://docs.python.org/3.7/library/contextvars.html
 
 
 `PEP 567 <https://www.python.org/dev/peps/pep-0567/>`_ also provides
-a comprehensive overview of the API and explains the design choices.
+a comprehensive overview of the API and explains all design choices.
 
 
 Installation
@@ -28,7 +35,7 @@ Installation
 
 .. code-block:: bash
 
-    $ pip install pep567
+    $ pip install contextvars
 
 
 Usage
@@ -36,15 +43,37 @@ Usage
 
 .. code-block:: python
 
-    try:
-        # Python 3.7
-        import contextvars
-    except ImportError:
-        # Python <= 3.6
-        import pep567 as contextvars
+    import contextvars
 
     my_var = contextvars.ContextVar('my_var')
+
     # ...
+
+
+Listing as a Dependency
+=======================
+
+The good news is that the standard library always takes the
+precedence over site packages, so even if a local ``contextvars``
+module is installed, the one from the standard library will be used.
+Therefore you can simply list "contextvars" in your
+``requirements.txt`` or ``setup.py`` files.
+
+Another option is to use `"platform specific dependencies"
+<http://setuptools.readthedocs.io/en/latest/setuptools.html\
+#declaring-platform-specific-dependencies>`_ setuptools feature:
+
+.. code-block:: python
+
+    import setuptools
+
+    setuptools.setup(
+        name="Project",
+        ...
+        install_requires=[
+            'contextvars;python_version<"3.7"'
+        ]
+    )
 
 
 License
