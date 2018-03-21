@@ -9,6 +9,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as f:
 setuptools.setup(
     name='contextvars',
     version="2.1",
+    url='http://github.com/MagicStack/contextvars',
     description='PEP 567 Backport',
     long_description=readme,
     author='MagicStack Inc',
@@ -20,6 +21,7 @@ setuptools.setup(
         'Development Status :: 3 - Alpha',
         'Programming Language :: Python :: 3 :: Only',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.5',
         'Operating System :: POSIX',
         'Operating System :: MacOS :: MacOS X',
         'Operating System :: Microsoft :: Windows',
