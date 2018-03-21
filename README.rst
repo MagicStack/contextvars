@@ -1,3 +1,7 @@
+.. image:: https://travis-ci.org/MagicStack/pep567.svg?branch=master
+    :target: https://travis-ci.org/MagicStack/pep567
+
+
 PEP 567 Backport
 ================
 

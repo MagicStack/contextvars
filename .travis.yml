@@ -1,0 +1,8 @@
+language: python
+
+python:
+  - 3.6
+
+script:
+  - pip install -e .
+  - python setup.py test
