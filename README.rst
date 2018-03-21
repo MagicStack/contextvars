@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/MagicStack/pep567.svg?branch=master
-    :target: https://travis-ci.org/MagicStack/pep567
+.. image:: https://travis-ci.org/MagicStack/contextvars.svg?branch=master
+    :target: https://travis-ci.org/MagicStack/contextvars
 
 
 PEP 567 Backport
