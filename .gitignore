@@ -1,0 +1,14 @@
+*._*
+*.pyc
+*.pyo
+*.so
+*~
+.#*
+.DS_Store
+/build
+__pycache__/
+/*.egg
+/*.egg-info
+/dist
+/.cache
+/.pytest_cache
