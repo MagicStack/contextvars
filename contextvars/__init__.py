@@ -58,7 +58,7 @@ class Context(collections.abc.Mapping, metaclass=ContextMeta):
     def run(self, callable, *args, **kwargs):
         if self._prev_context is not None:
             raise RuntimeError(
-                f'cannot enter context: {self} is already entered')
+                'cannot enter context: {} is already entered'.format(self))
 
         self._prev_context = _get_context()
         try:
@@ -75,12 +75,14 @@ class Context(collections.abc.Mapping, metaclass=ContextMeta):
 
     def __getitem__(self, var):
         if not isinstance(var, ContextVar):
-            raise TypeError(f"a ContextVar key was expected, got {var!r}")
+            raise TypeError(
+                "a ContextVar key was expected, got {!r}".format(var))
         return self._data[var]
 
     def __contains__(self, var):
         if not isinstance(var, ContextVar):
-            raise TypeError(f"a ContextVar key was expected, got {var!r}")
+            raise TypeError(
+                "a ContextVar key was expected, got {!r}".format(var))
         return var in self._data
 
     def __len__(self):
@@ -164,10 +166,10 @@ class ContextVar(metaclass=ContextVarMeta):
         token._used = True
 
     def __repr__(self):
-        r = f"<ContextVar name={self.name!r}"
+        r = '<ContextVar name={!r}'.format(self.name)
         if self._default is not _NO_DEFAULT:
-            r += f' default={self._default!r}'
-        return r + f" at {id(self):0x}>"
+            r += ' default={!r}'.format(self._default)
+        return r + ' at {:0x}>'.format(id(self))
 
 
 class TokenMeta(type):
@@ -203,7 +205,7 @@ class Token(metaclass=TokenMeta):
         r = '<Token '
         if self._used:
             r += ' used'
-        r += f' var={self._var!r} at {id(self):0x}>'
+        r += ' var={!r} at {:0x}>'.format(self._var, id(self))
         return r
 
 
