@@ -1,7 +1,7 @@
 import collections.abc
 import threading
 
-from immutables import Map
+import immutables
 
 
 __all__ = ('ContextVar', 'Context', 'Token', 'copy_context')
@@ -24,7 +24,7 @@ class ContextMeta(type(collections.abc.Mapping)):
 class Context(collections.abc.Mapping, metaclass=ContextMeta):
 
     def __init__(self):
-        self._data = Map()
+        self._data = immutables.Map()
         self._prev_context = None
 
     def run(self, callable, *args, **kwargs):
