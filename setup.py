@@ -8,7 +8,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as f:
 
 setuptools.setup(
     name='contextvars',
-    version="2.3",
+    version="2.4",
     url='http://github.com/MagicStack/contextvars',
     description='PEP 567 Backport',
     long_description=readme,
